@@ -130,7 +130,7 @@ class TransferToCrewRequest(BaseModel):
 def mock_booking(pnr: str, last_name: str):
     return {
         "pnr": pnr.upper(),
-        "passenger_name": f"{last_name.title()}, James",
+        "passenger_name": f"{last_name.title()}, Brian",
         "ffn": "SK" + "".join(random.choices(string.digits, k=8)),
         "tier": random.choice(["Gold", "Platinum", "Silver", "Blue"]),
         "miles_balance": random.randint(5000, 120000),
@@ -387,7 +387,7 @@ async def get_loyalty_profile(req: LoyaltyProfileRequest):
         "success": True,
         "profile": {
             "ffn": req.ffn,
-            "name": "James Chen",
+            "name": "Brian Carr",
             "tier": tier,
             "miles_balance": miles,
             "miles_expiry": (datetime.now() + timedelta(days=365)).strftime("%Y-%m-%d"),
